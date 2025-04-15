@@ -31,10 +31,17 @@ CREATE TABLE courses(
 
 CREATE TABLE sections(
   id INTEGER PRIMARY KEY AUTOINCREMENT,
+  time TEXT,
   course_id INTEGER,
   teacher_id INTEGER
 );
 
-SELECT FROM courses
-INNER JOIN sections ON courses.id=sections.course_id
-INNER JOIN teachers ON teachers.id=sections.teacher_id
+CREATE TABLE enrollments(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+section_id INTEGER,
+student_id INTEGER,
+);
+
+--SELECT FROM courses
+--INNER JOIN sections ON courses.id=sections.course_id
+--INNER JOIN teachers ON teachers.id=sections.teacher_id
